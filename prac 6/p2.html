@@ -7,11 +7,11 @@
 </head>
 <body>
     <script>
-        let mobileRegex = /^[6-9]\d{9}$/;
+        let urlRegex = /^(https?:\/\/)[\w.-]+\.\w{2,}$/;
 
-        console.log(mobileRegex.test("9876543210")); 
-        console.log(mobileRegex.test("1234567890")); 
-        console.log(mobileRegex.test("789654"));     
+console.log(urlRegex.test("https://google.com")); 
+console.log(urlRegex.test("ftp://example.com"));  
+
     </script>
 </body>
 </html>

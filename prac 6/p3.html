@@ -7,11 +7,10 @@
 </head>
 <body>
     <script>
-        let mobileRegex = /^[6-9]\d{9}$/;
+        let orderText = "Order 123 costs $45";
+let numRegex = /\d+/g;
 
-        console.log(mobileRegex.test("9876543210")); 
-        console.log(mobileRegex.test("1234567890")); 
-        console.log(mobileRegex.test("789654"));     
+console.log(orderText.match(numRegex)); 
     </script>
 </body>
 </html>

@@ -7,11 +7,10 @@
 </head>
 <body>
     <script>
-        let mobileRegex = /^[6-9]\d{9}$/;
+        let tweet = "Learning #JavaScript is #fun and #exciting!";
+let hashtags = tweet.match(/#[A-Za-z0-9_]+/g);
 
-        console.log(mobileRegex.test("9876543210")); 
-        console.log(mobileRegex.test("1234567890")); 
-        console.log(mobileRegex.test("789654"));     
+console.log(hashtags); 
     </script>
 </body>
 </html>

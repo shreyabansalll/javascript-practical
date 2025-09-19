@@ -7,11 +7,10 @@
 </head>
 <body>
     <script>
-        let mobileRegex = /^[6-9]\d{9}$/;
+        let text2 = "This is is a test test";
+let dupRegex = /\b(\w+)\s+\1\b/g;
 
-        console.log(mobileRegex.test("9876543210")); 
-        console.log(mobileRegex.test("1234567890")); 
-        console.log(mobileRegex.test("789654"));     
+console.log(text2.match(dupRegex)); 
     </script>
 </body>
 </html>

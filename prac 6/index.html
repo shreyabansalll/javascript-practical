@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task 1</title>
+</head>
+<body>
+  <h1>Task 1 – Name Formatter</h1>
+  <script>
+    let rawName = "   jOhN doE   ";
+    let trimmed = rawName.trim();
+    let nameParts = trimmed.split(" ");
+    let formattedName = nameParts
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+    console.log("Formatted Name:", formattedName);
+  </script>
+</body>
+</html>

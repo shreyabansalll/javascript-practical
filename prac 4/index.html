@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locker System</title>
+</head>
+<body>
+    <script>
+        function getGreater(a,b){
+            return a > b ? a : b;
+        }
+
+        const factorial = function(n){
+            if (n < 0) return undefined;
+            let result = 1;
+            for (let i = 1; i <= n; i++){
+                result *= i;
+            }
+            return result;
+        };
+
+        const checkScript = str => str.includes("JavaScript");
+
+        function secureMessage(password){
+            const secret = "Your secret message here";
+            return function(pass) {
+                return pass === password ? secret : "Access Denied";
+            };
+        }
+
+        let lockerName = "MyLocker";
+
+        function scopeDemo(){
+            let pin = 1234;
+            if (true){
+                let tempAccess = "Granted";
+                console.log(tempAccess);
+            }
+            console.log(pin);
+        }
+
+        function reverseNumber(num){
+            try{
+                if (typeof num !== "number" || isNaN(num)) throw "Invalid Input";
+                const sign = num < 0 ? -1 : 1;
+                const rev = Math.abs(num).toString().split("").reverse().join("");
+                return sign * parseInt(rev);
+            } catch (e) {
+                return "Error: " + e;
+            }
+        }
+
+        function isPalindrome(num) {
+            const str = num.toString();
+            return str === str.split("").reverse().join("");
+        }
+
+        function wordPalindrome(str){
+            const cleaned = str.toLowerCase().replace(/\s+/g, "");
+            return cleaned === cleaned.split("").reverse().join("");
+        }
+
+        function sqrt(num){
+            try{
+                if (typeof num !== "number" || isNaN(num)) throw "Invalid Input";
+                if (num < 0) throw "Negative numbers not allowed";
+                return Math.sqrt(num);
+            } catch (e) {
+                return "Error: "+ e;
+            }
+        }
+
+        const isPrime = (num) => {
+            try{
+                if (typeof num !== "number" || num < 2 || !Number.isInteger(num)) throw "Invalid Input";
+                for (let i = 2; i <= Math.sqrt(num); i++){
+                    if (num % i === 0) return false;
+                }
+                return true;
+            } catch (e) {
+                return "Error: " + e;
+            }
+        };
+
+        function menu(){
+            let choice = prompt("Enter task.\n1. Compare PINs\n2. Factorial\n3. Check Message\n4. Secure Message\n5. Reverse & Palindrome Number\n6. Word Palindrome\n7. Square Root\n8. Prime Check");
+            
+            switch(choice){
+                case "1":
+                    let a = parseInt(prompt("Enter first PIN"));
+                    let b = parseInt(prompt("Enter second PIN"));
+                    console.log("Stronger PIN: " + getGreater(a,b));
+                    break;
+                case "2":
+                    let n = parseInt(prompt("Enter number"));
+                    console.log("Factorial: " + factorial(n));
+                    break;
+                case "3":
+                    let msg = prompt("Enter message");
+                    console.log(checkScript(msg));
+                    break;
+                case "4":
+                    let pass = prompt("Set password");
+                    let locker = secureMessage(pass);
+                    let test = prompt("Enter password to unlock");
+                    console.log(locker(test));
+                    break;
+                case "5":
+                    let num = parseInt(prompt("Enter number"));
+                    let rev = reverseNumber(num);
+                    console.log("Reversed: " + rev + " | Palindrome: " + isPalindrome(num));
+                    break;
+                case "6":
+                    let word = prompt("Enter word");
+                    console.log(wordPalindrome(word));
+                    break;
+                case "7": 
+                    let sq = parseInt(prompt("Enter number"));
+                    console.log(sqrt(sq));
+                    break;
+                case "8":
+                    let p = parseInt(prompt("Enter number"));
+                    console.log(isPrime(p));
+                    break;
+                case "0":
+                    console.log("exit");
+                    return;
+                    break;
+                default:
+                    console.log("Invalid Choice");
+            }
+        menu();
+        }
+
+        menu();
+    </script>
+</body>
+</html>

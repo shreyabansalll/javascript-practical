@@ -7,14 +7,18 @@
 </head>
 <body>
     <script>
-        try
+     function checkAge(age)
 {
-let result = 10 / 0;
-if (!isFinite(result)) throw new Error("Cannot divide by zero!");
-console.log(result);
+if (age < 18) throw new Error("You must be 18+");
+return "Access granted";
 }
-catch (err) {
-console.log("Error:", err.message);
+try
+{
+console.log(checkAge(16));
+}
+catch (err)
+{
+console.log(err.message);
 }
     </script>
 </body>

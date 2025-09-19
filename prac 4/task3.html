@@ -7,15 +7,11 @@
 </head>
 <body>
     <script>
-        try
-{
-let result = 10 / 0;
-if (!isFinite(result)) throw new Error("Cannot divide by zero!");
-console.log(result);
-}
-catch (err) {
-console.log("Error:", err.message);
-}
+        const hasJavaScript = (str) => {
+  return str.includes("JavaScript");
+};
+console.log(hasJavaScript("I love JavaScript")); 
+console.log(hasJavaScript("I love coding"));     
     </script>
 </body>
 </html>

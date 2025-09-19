@@ -7,15 +7,23 @@
 </head>
 <body>
     <script>
-        try
-{
-let result = 10 / 0;
-if (!isFinite(result)) throw new Error("Cannot divide by zero!");
-console.log(result);
+        function outer() {
+  let value = "outer";
+
+  function middle() {
+    let value = "middle";
+
+    function inner() {
+      let value = "inner";
+      console.log(value);
+    }
+
+    inner();
+  }
+
+  middle();
 }
-catch (err) {
-console.log("Error:", err.message);
-}
+outer();
     </script>
 </body>
 </html>

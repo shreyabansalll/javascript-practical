@@ -7,14 +7,14 @@
 </head>
 <body>
     <script>
-        try
+      try
 {
-let result = 10 / 0;
-if (!isFinite(result)) throw new Error("Cannot divide by zero!");
-console.log(result);
+let data = JSON.parse("invalid json");
 }
-catch (err) {
-console.log("Error:", err.message);
+catch (err)
+
+{
+console.log("JSON Parse Error:", err.message);
 }
     </script>
 </body>

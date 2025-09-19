@@ -7,15 +7,15 @@
 </head>
 <body>
     <script>
-        try
-{
-let result = 10 / 0;
-if (!isFinite(result)) throw new Error("Cannot divide by zero!");
-console.log(result);
+        let x = 10;
+
+function shadowExample() {
+  let x = 5; 
+  console.log(x);
 }
-catch (err) {
-console.log("Error:", err.message);
-}
+
+shadowExample();
+console.log(x);
     </script>
 </body>
 </html>

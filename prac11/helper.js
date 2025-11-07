@@ -12,3 +12,4 @@ export function logEvent(message) {
   const now = new Date().toLocaleTimeString();
   console.log(`[${now}] ${message}`);
 }
+
